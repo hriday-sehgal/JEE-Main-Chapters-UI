@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "MathonGo - JEE Main",
+  title: "PYQs - JEE Main",
   description: "Chapter-wise Collection of Physics, Chemistry, and Mathematics PYQs",
 }
 
