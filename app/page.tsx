@@ -14,6 +14,32 @@ export default function Home() {
     setActiveSubject(subject);
   };
 
+  const getSubjectIcon = (subject: string) => {
+    switch (subject) {
+      case "Physics":
+        return <Atom className="h-6 w-6" />;
+      case "Chemistry":
+        return <Beaker className="h-6 w-6" />;
+      case "Mathematics":
+        return <Calculator className="h-6 w-6" />;
+      default:
+        return null;
+    }
+  };
+
+  const getSubjectColor = (subject: string) => {
+    switch (subject) {
+      case "Physics":
+        return "bg-orange-500";
+      case "Chemistry":
+        return "bg-green-500";
+      case "Mathematics":
+        return "bg-blue-500";
+      default:
+        return "";
+    }
+  };
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-background">
       {/* Sidebar for larger screens */}
@@ -25,19 +51,29 @@ export default function Home() {
       </div>
 
       {/* Main content */}
-      <div className="flex-1 p-4 md:p-6">
-        <div className="flex justify-between items-center mb-6">
-          <div>
-            <h1 className="text-2xl font-bold">{activeSubject} PYQs</h1>
-            <p className="text-muted-foreground text-sm">
-              Chapter-wise Collection of {activeSubject} PYQs
-            </p>
-          </div>
+      <div className="flex-1 p-1 md:p-2">
+        <div className="flex justify-end">
           <ModeToggle />
         </div>
 
+        <div className="flex flex-col items-center text-center mb-4">
+          <div className="flex items-center gap-3">
+            <span
+              className={`${getSubjectColor(
+                activeSubject
+              )} p-2 rounded-full text-white`}
+            >
+              {getSubjectIcon(activeSubject)}
+            </span>
+            <h1 className="text-2xl font-bold">{activeSubject} PYQs</h1>
+          </div>
+          <p className="text-muted-foreground text-sm mt-1 mb-3">
+            Chapter-wise Collection of {activeSubject} PYQs
+          </p>
+        </div>
+
         {/* Mobile tabs - visible only on mobile */}
-        <div className="md:hidden mb-6">
+        <div className="md:hidden mb-4">
           <Tabs
             defaultValue={activeSubject.toLowerCase()}
             onValueChange={(value) =>

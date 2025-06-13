@@ -1,7 +1,8 @@
 "use client";
 
-import { Compass, Atom, Beaker, Calculator } from "lucide-react";
+import { Atom, Beaker, Calculator } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SubjectSidebarProps {
   activeSubject: string;
@@ -15,7 +16,13 @@ export default function SubjectSidebar({
   return (
     <div className="p-6 h-full flex flex-col">
       <div className="flex items-center gap-2 mb-6">
-        <Compass className="h-6 w-6 text-orange-500" />
+        <Image
+          src="/JEE-IMAGE.png"
+          alt="JEE Main Logo"
+          width={32}
+          height={32}
+          className="object-contain"
+        />
         <h2 className="text-xl font-bold">JEE Main</h2>
       </div>
       <p className="text-sm text-muted-foreground mb-8">
