@@ -14,7 +14,7 @@ A modern, responsive dashboard for JEE Main Previous Year Questions (PYQs) built
 
 ## Tech Stack
 
-- **Framework**: Next.js 14
+- **Framework**: Next.js 
 - **Styling**: Tailwind CSS
 - **UI Components**: Custom components with Radix UI primitives
 - **Icons**: Lucide Icons
